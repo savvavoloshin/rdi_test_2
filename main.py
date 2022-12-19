@@ -34,7 +34,7 @@ async def create_file(file: bytes = File()):
             # wav should be signed int16 and to be not more than 10 seconds length
             if (wavHeaderParams["bitsPerSample"] == 16):
                 if (wavHeaderParams["audioFormat"] == 1):
-                    if (True if (duration <= 10.0) else False):
+                    if (duration <= 10.0):
                         filetype_info["isValid"] = True
 
             if (wavHeaderParams["bitsPerSample"] != 16):
